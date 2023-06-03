@@ -1,19 +1,12 @@
+import prisma from "@/lib/prisma";
+
 import Todo from "./todo";
 
-function Todos() {
-  const placeHolderTodos = [
-    {
-      id: 1,
-      text: "Task 1",
-    },
-    {
-      id: 2,
-      text: "Task 2",
-    },
-  ];
+async function Todos() {
+  const todos = await prisma.todo.findMany();
   return (
-    <div className="my-6 rounded">
-      {placeHolderTodos.map((todo) => (
+    <div className="my-6 rounded shadow">
+      {todos.map((todo) => (
         <Todo key={todo.id} todo={todo} />
       ))}
     </div>

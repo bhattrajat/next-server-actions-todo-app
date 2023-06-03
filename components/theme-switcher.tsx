@@ -15,7 +15,7 @@ function ThemeChanger() {
     }
   };
   return (
-    <div className="absolute right-4 top-8">
+    <div className="absolute right-4 top-8 lg:right-12">
       {/* The current theme is: {theme} */}
       <button type="button" onClick={toggleTheme}>
         <span className="sr-only">

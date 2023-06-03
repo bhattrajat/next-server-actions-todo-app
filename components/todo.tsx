@@ -1,12 +1,14 @@
 type Props = {
   todo: {
     id: number;
-    text: string;
+    name: string;
   };
 };
 function Todo({ todo }: Props) {
-  return <div className="rounded-sm border-b-2 border-gray-600 bg-white p-4 dark:bg-gray-800">
-      {todo.text}
+  return (
+    <div className="rounded-sm border-b-2 border-gray-300 bg-white p-4 dark:bg-gray-800">
+      {todo.name}
     </div>
+  );
 }
 export default Todo;

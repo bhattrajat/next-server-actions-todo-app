@@ -2,6 +2,8 @@ import ThemeChanger from "@/components/theme-switcher";
 import Image from "next/image";
 import AddTodo from "@/components/add-todo";
 import Todos from "@/components/todos";
+import { Suspense } from "react";
+import Skeleton from "@/components/ui/skeleton";
 
 export default function Home() {
   return (
@@ -30,7 +32,13 @@ export default function Home() {
       <div className="mx-auto px-4 py-8 lg:max-w-lg">
         <h1 className="text-3xl font-bold text-white">Todo</h1>
         <AddTodo />
-        <Todos />
+        <Suspense
+          fallback={
+            <Skeleton className="my-6 h-96 w-full rounded bg-slate-600 shadow lg:max-w-lg" />
+          }
+        >
+          <Todos />
+        </Suspense>
       </div>
     </main>
   );
