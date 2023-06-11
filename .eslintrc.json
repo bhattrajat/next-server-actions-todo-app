@@ -1,9 +1,53 @@
 {
-  "extends": ["airbnb", "airbnb-typescript", "next", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:typescript-sort-keys/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "next",
+    "prettier"
+  ],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "simple-import-sort",
+    "typescript-sort-keys"
+  ],
   "rules": {
-    "react/jsx-props-no-spreading": "off"
-  }
+    "react/jsx-props-no-spreading": "off",
+    "import/prefer-default-export": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  },
+  "root": true,
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      ],
+      "files": ["**/*.{ts,tsx}"],
+      "parserOptions": {
+        "project": ["./tsconfig.json"]
+      }
+    },
+    {
+      "files": ["*.json"],
+      "parser": "jsonc-eslint-parser",
+      "rules": {
+        "jsonc/sort-keys": "error"
+      },
+      "extends": ["plugin:jsonc/recommended-with-json"]
+    }
+  ]
 }

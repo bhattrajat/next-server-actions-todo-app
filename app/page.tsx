@@ -1,8 +1,9 @@
-import ThemeChanger from "@/components/theme-switcher";
 import Image from "next/image";
-import AddTodo from "@/components/add-todo";
-import Todos from "@/components/todos";
 import { Suspense } from "react";
+
+import AddTodo from "@/components/add-todo";
+import ThemeChanger from "@/components/theme-switcher";
+import Todos from "@/components/todos";
 import Skeleton from "@/components/ui/skeleton";
 
 export default function Home() {

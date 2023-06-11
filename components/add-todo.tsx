@@ -1,7 +1,9 @@
 "use client";
 
 import { useRef } from "react";
+
 import createTodo from "@/actions/create-todo";
+
 import IsAddingTodo from "./is-adding-todo";
 
 function AddTodo() {
@@ -9,6 +11,7 @@ function AddTodo() {
   return (
     <form
       ref={formRef}
+      // eslint-disable-next-line @typescript-eslint/no-misused-promises
       action={async (formData: FormData) => {
         const todoName = formData.get("todo") as string;
         if (formRef.current) {

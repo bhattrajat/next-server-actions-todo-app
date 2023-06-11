@@ -1,9 +1,7 @@
 "use client";
 
-import { useTheme } from "next-themes";
 import Image from "next/image";
-import sunIcon from "../public/icon-sun.svg";
-import moonIcon from "../public/icon-moon.svg";
+import { useTheme } from "next-themes";
 
 function ThemeChanger() {
   const { resolvedTheme, setTheme } = useTheme();
@@ -22,8 +20,10 @@ function ThemeChanger() {
           {resolvedTheme === "light" ? "Dark Mode" : "Light Mode"}
         </span>
         <Image
-          src={resolvedTheme === "light" ? moonIcon : sunIcon}
+          src={resolvedTheme === "light" ? "./icon-moon.svg" : "./icon-sun.svg"}
           alt={resolvedTheme === "light" ? "Dark Mode" : "Light Mode"}
+          width={32}
+          height={32}
         />
       </button>
     </div>
