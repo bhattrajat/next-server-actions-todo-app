@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 
-import createTodo from "@/actions/create-todo";
+import { createTodo } from "@/actions/todo";
 
 import IsAddingTodo from "./is-adding-todo";
 
