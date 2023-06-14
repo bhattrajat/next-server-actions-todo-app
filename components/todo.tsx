@@ -16,9 +16,7 @@ function Todo({ todo }: Props) {
   const [isPending, startTransition] = useTransition();
   const [isDeletePending, startDeleteTransition] = useTransition();
   return (
-    <div
-      className="flex items-center rounded-sm border-b-2 border-gray-300 bg-white p-4 dark:bg-gray-800"
-    >
+    <div className="flex items-center border-b-2 border-gray-300 bg-white p-4 dark:bg-gray-800">
       <input
         className="mr-2 inline-block h-5 w-5 cursor-pointer rounded-full"
         type="checkbox"
@@ -29,9 +27,13 @@ function Todo({ todo }: Props) {
           );
         }}
       />
-      <span className={`${
-        todo.isCompleted ? "line-through" : ""
-      }`}>{todo.name}</span>
+      <span
+        className={`${
+          todo.isCompleted ? "line-through dark:text-gray-400" : ""
+        }`}
+      >
+        {todo.name}
+      </span>
       {isPending ? <span className="ml-4">updating todo....</span> : null}
       {isDeletePending ? (
         <span className="ml-4 inline-block no-underline">

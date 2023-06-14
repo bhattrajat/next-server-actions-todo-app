@@ -6,7 +6,11 @@ import ThemeChanger from "@/components/theme-switcher";
 import Todos from "@/components/todos";
 import Skeleton from "@/components/ui/skeleton";
 
-export default function Home() {
+export default function Home({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
   return (
     <main>
       {/* When the theme is dark, hide this div */}
@@ -30,7 +34,7 @@ export default function Home() {
         />
       </div>
       <ThemeChanger />
-      <div className="mx-auto px-4 py-8 lg:max-w-lg">
+      <div className="mx-auto px-4 py-8 lg:max-w-xl">
         <h1 className="text-3xl font-bold text-white">Todo</h1>
         <AddTodo />
         <Suspense
@@ -38,7 +42,7 @@ export default function Home() {
             <Skeleton className="my-6 h-96 w-full rounded bg-slate-600 shadow lg:max-w-lg" />
           }
         >
-          <Todos />
+          <Todos searchParams={searchParams} />
         </Suspense>
       </div>
     </main>
