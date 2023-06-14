@@ -35,7 +35,9 @@ export default function Home({
       </div>
       <ThemeChanger />
       <div className="mx-auto px-4 py-8 lg:max-w-xl">
-        <h1 className="text-3xl font-bold text-white">Todo</h1>
+        <h1 className="text-3xl font-bold uppercase tracking-widest text-white">
+          Todo
+        </h1>
         <AddTodo />
         <Suspense
           fallback={

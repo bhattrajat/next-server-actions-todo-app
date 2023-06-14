@@ -1,10 +1,13 @@
 import "./globals.css";
 
-import { Inter } from "next/font/google";
+import { Josefin_Sans } from "next/font/google";
 
 import Providers from "./providers";
 
-const inter = Inter({ subsets: ["latin"] });
+const josefinSans = Josefin_Sans({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -18,7 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <body className={`${inter.className} dark:bg-gray-900 dark:text-gray-50`}>
+      <body
+        className={`${josefinSans.className} dark:bg-gray-900 dark:text-gray-50`}
+      >
         <Providers>{children}</Providers>
       </body>
     </html>

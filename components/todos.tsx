@@ -20,7 +20,7 @@ async function Todos({
     orderBy: { id: "desc" },
   });
   return (
-    <div className="my-6 rounded border-b-2 border-gray-300 shadow dark:bg-gray-800 dark:text-gray-300">
+    <div className="my-6 rounded border-b-2 border-gray-300 shadow dark:border-gray-500 dark:bg-gray-800 dark:text-gray-300">
       {todos.map((todo) => (
         <Todo key={todo.id} todo={todo} />
       ))}

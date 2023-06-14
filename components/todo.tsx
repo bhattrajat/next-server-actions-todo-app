@@ -16,7 +16,7 @@ function Todo({ todo }: Props) {
   const [isPending, startTransition] = useTransition();
   const [isDeletePending, startDeleteTransition] = useTransition();
   return (
-    <div className="flex items-center border-b-2 border-gray-300 bg-white p-4 dark:bg-gray-800">
+    <div className="flex items-center border-b-2 border-gray-300 bg-white p-4 dark:border-gray-500 dark:bg-gray-800">
       <input
         className="mr-2 inline-block h-5 w-5 cursor-pointer rounded-full"
         type="checkbox"
