@@ -8,7 +8,9 @@ const TodoFilters = () => {
   return (
     <div className="flex gap-4">
       <button
-        className={`${!searchParams.get("filter") ? "text-blue-600" : ""}`}
+        className={`${
+          !searchParams.get("filter") ? "text-blue-600" : "hover:text-blue-400"
+        }`}
         onClick={() => {
           router.push("/");
         }}
@@ -17,7 +19,9 @@ const TodoFilters = () => {
       </button>
       <button
         className={`${
-          searchParams.get("filter") === "active" ? "text-blue-600" : ""
+          searchParams.get("filter") === "active"
+            ? "text-blue-600"
+            : "hover:text-blue-400"
         }`}
         onClick={() => {
           router.push("/?filter=active");
@@ -27,7 +31,9 @@ const TodoFilters = () => {
       </button>
       <button
         className={`${
-          searchParams.get("filter") === "completed" ? "text-blue-600" : ""
+          searchParams.get("filter") === "completed"
+            ? "text-blue-600"
+            : "hover:text-blue-400"
         }`}
         onClick={() => {
           router.push("/?filter=completed");

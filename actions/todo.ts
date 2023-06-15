@@ -18,3 +18,8 @@ export const deleteTodo = async (id: number) => {
   await prisma.todo.delete({ where: { id } });
   revalidatePath("/");
 };
+
+export const deleteCompletedTodos = async () => {
+  await prisma.todo.deleteMany({ where: { isCompleted: true } });
+  revalidatePath("/");
+};

@@ -1,5 +1,6 @@
 import prisma from "@/lib/prisma";
 
+import ClearButton from "./clear-button";
 import Todo from "./todo";
 import TodoFilters from "./todo-filters";
 
@@ -27,9 +28,7 @@ async function Todos({
       <div className="flex items-center justify-between p-4">
         <div>{`${todos.length} items left`}</div>
         <TodoFilters />
-        <div>
-          <button>Clear Completed</button>
-        </div>
+        <ClearButton />
       </div>
     </div>
   );
